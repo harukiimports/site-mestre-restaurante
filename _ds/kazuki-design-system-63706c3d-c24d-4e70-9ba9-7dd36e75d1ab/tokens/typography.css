@@ -1,0 +1,48 @@
+/* KAZUKI — Typography Tokens
+   Display: Playfair Display (serif, 700) — titles, prices, brand voice.
+   Body:    Montserrat (sans, 400) — copy, labels, captions, CTAs. */
+
+:root {
+  /* ---- Families ---- */
+  --font-display: 'Playfair Display', 'Times New Roman', serif;
+  --font-body:    'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+  /* ---- Weights ---- */
+  --fw-light:     300; /* @kind font */
+  --fw-regular:   400; /* @kind font */
+  --fw-medium:    500; /* @kind font */
+  --fw-semibold:  600; /* @kind font */
+  --fw-bold:      700; /* @kind font */
+  --fw-black:     900; /* @kind font */
+
+  /* ---- Type scale (post-oriented, large for 1080px canvases) ---- */
+  --fs-display:   96px;  /* hero brand word (KAZUKI) */
+  --fs-h1:        64px;  /* post headline */
+  --fs-h2:        44px;  /* sub headline */
+  --fs-h3:        32px;  /* dish name / section */
+  --fs-price:     56px;  /* price figures */
+  --fs-lead:      24px;  /* lead paragraph */
+  --fs-body:      18px;  /* body copy */
+  --fs-label:     15px;  /* labels, CTA text */
+  --fs-caption:   13px;  /* captions, handle, fine print */
+  --fs-overline:  12px;  /* eyebrow / kicker */
+
+  /* ---- Line heights ---- */
+  --lh-tight:     1.04; /* @kind font */
+  --lh-snug:      1.18; /* @kind font */
+  --lh-normal:    1.5; /* @kind font */
+  --lh-relaxed:   1.7; /* @kind font */
+
+  /* ---- Letter spacing ---- */
+  --ls-display:   0.01em;  /* @kind font */
+  --ls-tight:     -0.01em; /* @kind font */
+  --ls-wide:      0.08em;  /* overlines, labels @kind font */
+  --ls-wider:     0.22em;  /* kicker / spaced caps @kind font */
+  --ls-cta:       0.14em;  /* button labels @kind font */
+
+  /* ---- Semantic type roles ---- */
+  --type-heading-family: var(--font-display);
+  --type-heading-weight: var(--fw-bold);
+  --type-body-family:    var(--font-body);
+  --type-body-weight:    var(--fw-regular);
+}

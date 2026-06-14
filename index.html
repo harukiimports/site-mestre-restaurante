@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO (updated per-route by JS) -->
+  <title>Restaurante em Cotia | ZEN SUSHI | Reservas e Delivery</title>
+  <meta name="description" content="ZEN SUSHI — alta gastronomia em Cotia. Cortes nobres, risotos e frutos do mar. Faça sua reserva ou peça delivery." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="author" content="ZEN SUSHI Restaurante" />
+  <meta name="geo.region" content="BR-SP" />
+  <meta name="geo.placename" content="Cotia" />
+  <meta name="geo.position" content="-23.6039;-46.9189" />
+  <meta name="ICBM" content="-23.6039, -46.9189" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ZEN SUSHI Restaurante" />
+  <meta property="og:image" content="assets/kazuki-capa.jpg" />
+
+  <!-- Favicons: .ico (32x32) + Apple touch (180x180) -->
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+  <!-- Google Analytics 4 (gtag) — loaded in <head> for all pages.
+       Replace G-KAZUKICOTIA with your real Measurement ID. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KAZUKICOTIA"></script>
+
+  <!-- ZEN SUSHI Design System tokens + global styles -->
+  <link rel="stylesheet" href="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/tokens/fonts.css" />
+  <link rel="stylesheet" href="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/tokens/colors.css" />
+  <link rel="stylesheet" href="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/tokens/typography.css" />
+  <link rel="stylesheet" href="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/tokens/spacing.css" />
+  <link rel="stylesheet" href="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/tokens/effects.css" />
+  <link rel="stylesheet" href="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/styles.css" />
+  <link rel="stylesheet" href="app/site.css" />
+</head>
+<body>
+  <div id="root"></div>
+
+  <template id="__bundler_thumbnail">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <rect width="100" height="100" fill="#0A0A0A"/>
+      <text x="50" y="62" font-family="Playfair Display, Georgia, serif" font-size="46" font-weight="900" text-anchor="middle" fill="#D4A853">K</text>
+    </svg>
+  </template>
+
+  <!-- React + Babel -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <!-- Data + SEO engine (plain JS, no JSX) -->
+  <script src="app/data.js"></script>
+  <script src="app/seo.js"></script>
+
+  <!-- ZEN SUSHI Design System component bundle -->
+  <script src="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/_ds_bundle.js"></script>
+
+  <!-- User-fillable image slots (drag & drop) -->
+  <script src="image-slot.js"></script>
+
+  <!-- App (JSX, transpiled by Babel) -->
+  <script type="text/babel" src="app/components.jsx"></script>
+  <script type="text/babel" src="app/pages-core.jsx"></script>
+  <script type="text/babel" src="app/pages-more.jsx"></script>
+  <script type="text/babel" src="app/main.jsx"></script>
+
+  <!-- Rolagem suave com Lenis (biblioteca oficial) -->
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="app/smooth-scroll.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* KAZUKI — Color Tokens
+   Premium samurai palette: black canvas, gold details, blood-red accents,
+   bone foreground. High contrast and luxurious. */
+
+:root {
+  /* ---- Base palette (raw brand colors) ---- */
+  --kz-black:        #0A0A0A; /* hsl(0 0% 4%)   — primary background */
+  --kz-gold:         #D4A853; /* hsl(43 56% 52%) — primary, gold details */
+  --kz-gold-light:   #E8C482; /* hsl(43 70% 65%) — gradient highlight */
+  --kz-blood:        #AF2828; /* hsl(0 63% 42%)  — accent: price, promo, CTA */
+  --kz-bone:         #F0E8D7; /* hsl(40 20% 90%) — foreground / body text */
+
+  /* ---- Extended neutrals (derived from black for layering) ---- */
+  --kz-black-900:    #0A0A0A;
+  --kz-black-800:    #121110;
+  --kz-black-700:    #1A1815;
+  --kz-black-600:    #24201A;
+  --kz-ink-line:     #2E2A22; /* hairline borders on dark */
+
+  /* ---- Gold variants ---- */
+  --kz-gold-deep:    #A8812F; /* shadowed gold, engraving */
+  --kz-gold-dim:     rgba(212, 168, 83, 0.16); /* subtle gold wash / fills */
+
+  /* ---- Blood variants ---- */
+  --kz-blood-deep:   #7E1B1B; /* pressed / shadowed blood */
+  --kz-blood-bright: #C73838; /* hover on blood */
+
+  /* ---- Bone variants ---- */
+  --kz-bone-dim:     rgba(240, 232, 215, 0.62); /* muted body text */
+  --kz-bone-faint:   rgba(240, 232, 215, 0.34); /* captions, labels */
+
+  /* ---- Signature gold gradient (text, frames, foil) ---- */
+  --kz-gradient-gold: linear-gradient(135deg, #A8812F 0%, #D4A853 38%, #E8C482 52%, #D4A853 66%, #9C7528 100%); /* @kind color */
+  --kz-gradient-gold-soft: linear-gradient(180deg, #E8C482 0%, #D4A853 100%); /* @kind color */
+  /* Black canvas with a warm gold glow rising from center (post backdrops) */
+  --kz-glow-gold: radial-gradient(120% 80% at 50% 60%, rgba(212,168,83,0.18) 0%, rgba(212,168,83,0.05) 38%, rgba(10,10,10,0) 70%); /* @kind color */
+
+  /* ---- Semantic aliases ---- */
+  --surface-canvas:   var(--kz-black);
+  --surface-raised:   var(--kz-black-800);
+  --surface-card:     var(--kz-black-700);
+  --surface-overlay:  rgba(10, 10, 10, 0.78);
+
+  --text-heading:     var(--kz-gold);
+  --text-body:        var(--kz-bone);
+  --text-muted:       var(--kz-bone-dim);
+  --text-caption:     var(--kz-bone-faint);
+  --text-on-gold:     var(--kz-black);
+  --text-on-blood:    var(--kz-bone);
+
+  --accent-primary:   var(--kz-gold);
+  --accent-strong:    var(--kz-blood);
+
+  --border-gold:      var(--kz-gold);
+  --border-hairline:  var(--kz-ink-line);
+  --border-subtle:    rgba(212, 168, 83, 0.28);
+
+  --focus-ring:       rgba(212, 168, 83, 0.55);
+}
