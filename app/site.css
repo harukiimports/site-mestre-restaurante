@@ -390,6 +390,16 @@ body::before {
   /* O botão do design system traz white-space:nowrap inline — precisa de
      !important para deixar o texto longo quebrar e o botão encolher. */
   .kz-form-actions > * { width: 100%; white-space: normal !important; }
+
+  /* Tela principal no mobile: menos espaço vazio vertical, scroll mais curto
+     e confortável. Seções e títulos mais compactos; cards mais próximos. */
+  .kz-section { padding: 48px clamp(20px, 5vw, 28px); }
+  .kz-section-head { margin-bottom: var(--space-6); gap: var(--space-2); }
+  .kz-featured-grid { gap: var(--space-4); }
+  .kz-diff-grid { gap: var(--space-3); }
+  .kz-feat-body { padding: var(--space-4); }
+  .kz-hero-content { gap: var(--space-3); }
+  .kz-hero { padding-top: clamp(96px, 12vh, 130px); }
 }
 @media (max-width: 560px) {
   .kz-diff-grid, .kz-delivery-grid, .kz-tips-list, .kz-related-grid, .kz-footer-grid { grid-template-columns: 1fr; }

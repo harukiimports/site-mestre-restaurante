@@ -10,20 +10,30 @@
       return;
     }
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    // Em telas de toque (celular/tablet) mantemos o scroll NATIVO — o "syncTouch"
-    // da Lenis sequestra o gesto e deixa a rolagem travada/bugada no mobile.
-    var isTouch = window.matchMedia && window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+    // Em telas de toque (celular/tablet) NÃO inicializamos a Lenis — ela sequestra
+    // o gesto e deixa a rolagem travada/bugada. Mantemos o scroll 100% nativo.
+    var isTouch = window.matchMedia &&
+      (window.matchMedia("(hover: none) and (pointer: coarse)").matches ||
+       window.matchMedia("(pointer: coarse)").matches) ||
+      ("ontouchstart" in window) || (navigator.maxTouchPoints > 0);
+
+    if (isTouch || reduce) {
+      window.__smooth = {
+        to: function (y, opts) { window.scrollTo({ top: typeof y === "number" ? y : 0, behavior: (opts && opts.immediate) ? "auto" : "smooth" }); },
+        toTop: function (immediate) { window.scrollTo({ top: 0, behavior: immediate ? "auto" : "smooth" }); },
+      };
+      return;
+    }
 
     var lenis = new window.Lenis({
-      duration: reduce ? 0 : 2.2,
+      duration: 2.2,
       // easing tipo macOS: desacelera suave e longo no fim
       easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -11 * t)); },
-      smoothWheel: !reduce,
+      smoothWheel: true,
       wheelMultiplier: 1.15,
-      touchMultiplier: 1.8,
-      lerp: reduce ? 1 : 0.045,
-      // Desktop: rolagem suave. Mobile/toque: nativo (syncTouch desligado).
-      syncTouch: !isTouch && !reduce,
+      lerp: 0.045,
+      // Rolagem suave só no desktop (mouse/trackpad). Toque já saiu acima.
+      syncTouch: false,
     });
 
     function raf(time) {
