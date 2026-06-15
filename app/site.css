@@ -372,7 +372,17 @@ body::before {
   .kz-blog-card.is-feature .kz-blog-card-link { grid-template-columns: 1fr; }
   .kz-footer-grid { grid-template-columns: 1fr 1fr; }
   .kz-admin-grid { grid-template-columns: 1fr; }
-  .kz-catnav-wrap { top: 64px; }
+  .kz-catnav-wrap { top: 70px; }
+}
+/* Telas de toque/celular: hero cresce com o conteúdo e a faixa de info
+   fica no fluxo normal (não mais absoluta) para não colidir com os botões. */
+@media (max-width: 768px) {
+  .kz-hero { min-height: auto; justify-content: flex-start; padding-bottom: 0; }
+  .kz-hero-strip {
+    position: static; margin-top: var(--space-6);
+    justify-content: center; text-align: center;
+    padding: 18px clamp(20px, 5vw, 48px);
+  }
 }
 @media (max-width: 560px) {
   .kz-diff-grid, .kz-delivery-grid, .kz-tips-list, .kz-related-grid, .kz-footer-grid { grid-template-columns: 1fr; }
