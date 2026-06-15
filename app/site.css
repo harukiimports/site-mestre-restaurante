@@ -383,6 +383,13 @@ body::before {
     justify-content: center; text-align: center;
     padding: 18px clamp(20px, 5vw, 48px);
   }
+  /* Botões de ação com texto longo (ex.: "Confirmar reserva no WhatsApp")
+     travavam a largura por causa do nowrap e estouravam a tela. No mobile
+     deixamos ocupar a largura toda e permitir a quebra do texto. */
+  .kz-form-actions { width: 100%; }
+  /* O botão do design system traz white-space:nowrap inline — precisa de
+     !important para deixar o texto longo quebrar e o botão encolher. */
+  .kz-form-actions > * { width: 100%; white-space: normal !important; }
 }
 @media (max-width: 560px) {
   .kz-diff-grid, .kz-delivery-grid, .kz-tips-list, .kz-related-grid, .kz-footer-grid { grid-template-columns: 1fr; }
