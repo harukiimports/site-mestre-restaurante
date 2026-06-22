@@ -136,7 +136,7 @@
       dataLabel: "28 de maio de 2026",
       categoria: "Experiências",
       leitura: "6 min",
-      img: "https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=1280&q=80",
+      img: "assets/melhores-pratos-jantar-a-dois-cotia.jpg",
       topicos: [
         {
           h2: "Por que Cotia virou rota gastronômica",
@@ -163,7 +163,7 @@
       dataLabel: "12 de maio de 2026",
       categoria: "Cozinha",
       leitura: "5 min",
-      img: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=1280&q=80",
+      img: "assets/risoto-de-camarao-ponto-perfeito-cotia.jpg",
       topicos: [
         {
           h2: "Começa no arroz arbóreo",
@@ -190,7 +190,7 @@
       dataLabel: "30 de abril de 2026",
       categoria: "Vinhos",
       leitura: "7 min",
-      img: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1280&q=80",
+      img: "assets/harmonizacao-de-vinhos-cotia.jpg",
       topicos: [
         {
           h2: "Equilíbrio antes de regra",
@@ -217,7 +217,7 @@
       dataLabel: "15 de abril de 2026",
       categoria: "Cozinha",
       leitura: "5 min",
-      img: "https://images.unsplash.com/photo-1558030006-450675393462?w=1280&q=80",
+      img: "assets/picanha-na-brasa-blog-cotia.jpg",
       topicos: [
         {
           h2: "A escolha do corte",
@@ -244,7 +244,7 @@
       dataLabel: "29 de março de 2026",
       categoria: "Confeitaria",
       leitura: "4 min",
-      img: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=1280&q=80",
+      img: "assets/sobremesas-artesanais-cotia.jpg",
       topicos: [
         {
           h2: "Petit Gâteau: o ponto do recheio",

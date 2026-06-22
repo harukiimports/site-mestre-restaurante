@@ -20,6 +20,8 @@ body {
   overflow-x: hidden;
 }
 img { max-width: 100%; display: block; }
+/* Imagens otimizadas (substituem os antigos image-slots): preenchem o quadro */
+img.kz-hero-slot, img.kz-mission-slot, img.kz-feat-slot { object-fit: cover; object-position: center; }
 a { color: var(--kz-gold); text-decoration: none; }
 ::selection { background: var(--kz-gold); color: var(--kz-black); }
 

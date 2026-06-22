@@ -21,57 +21,48 @@
   <meta property="og:site_name" content="ZEN SUSHI Restaurante" />
   <meta property="og:image" content="assets/kazuki-capa.jpg" />
 
-  <!-- Favicons: .ico (32x32) + Apple touch (180x180) -->
+  <!-- Favicons -->
   <link rel="icon" href="favicon.ico" sizes="32x32" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
-  <!-- Google Analytics 4 (gtag) — loaded in <head> for all pages.
-       Replace G-KAZUKICOTIA with your real Measurement ID. -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KAZUKICOTIA"></script>
+  <!-- Performance: conexões antecipadas + preload da imagem do hero -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="assets/zen-sushi-restaurante-cotia-hero.jpg" fetchpriority="high" />
 
-  <!-- ZEN SUSHI Design System tokens + global styles -->
-  <link rel="stylesheet" href="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/tokens/fonts.css" />
+  <!-- Webfonts (Google Fonts) — no <head> com display=swap -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" />
+
+  <!-- Design System tokens + estilos globais -->
   <link rel="stylesheet" href="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/tokens/colors.css" />
   <link rel="stylesheet" href="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/tokens/typography.css" />
   <link rel="stylesheet" href="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/tokens/spacing.css" />
   <link rel="stylesheet" href="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/tokens/effects.css" />
   <link rel="stylesheet" href="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/styles.css" />
-  <link rel="stylesheet" href="app/site.css?v=20260615" />
+  <link rel="stylesheet" href="app/site.css?v=20260616" />
+
+  <!-- Google Analytics 4 — troque G-KAZUKICOTIA pelo seu Measurement ID real -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KAZUKICOTIA"></script>
 </head>
 <body>
   <div id="root"></div>
 
-  <template id="__bundler_thumbnail">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-      <rect width="100" height="100" fill="#0A0A0A"/>
-      <text x="50" y="62" font-family="Playfair Display, Georgia, serif" font-size="46" font-weight="900" text-anchor="middle" fill="#D4A853">K</text>
-    </svg>
-  </template>
+  <!-- React 18 (produção, auto-hospedado — sem CDN, sem Babel no navegador) -->
+  <script src="vendor/react.production.min.js"></script>
+  <script src="vendor/react-dom.production.min.js"></script>
 
-  <!-- React + Babel -->
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <!-- Conteúdo + engine de SEO -->
+  <script src="app/data.js?v=20260616"></script>
+  <script src="app/seo.js?v=20260616"></script>
 
-  <!-- Data + SEO engine (plain JS, no JSX) -->
-  <script src="app/data.js?v=20260615"></script>
-  <script src="app/seo.js?v=20260615"></script>
-
-  <!-- ZEN SUSHI Design System component bundle -->
+  <!-- Design System (componentes) -->
   <script src="_ds/kazuki-design-system-63706c3d-c24d-4e70-9ba9-7dd36e75d1ab/_ds_bundle.js"></script>
 
-  <!-- User-fillable image slots (drag & drop) -->
-  <script src="image-slot.js?v=20260615"></script>
-
-  <!-- App (JSX, transpiled by Babel) -->
-  <script type="text/babel" src="app/components.jsx?v=20260615"></script>
-  <script type="text/babel" src="app/pages-core.jsx?v=20260615"></script>
-  <script type="text/babel" src="app/pages-more.jsx?v=20260615"></script>
-  <script type="text/babel" src="app/main.jsx?v=20260615"></script>
-
-  <!-- Rolagem suave com Lenis (biblioteca oficial) -->
-  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="app/smooth-scroll.js?v=20260615"></script>
+  <!-- App (JS já transpilado — gerado a partir dos .jsx) -->
+  <script src="app/components.js?v=20260616"></script>
+  <script src="app/pages-core.js?v=20260616"></script>
+  <script src="app/pages-more.js?v=20260616"></script>
+  <script src="app/main.js?v=20260616"></script>
 </body>
 </html>

@@ -5,13 +5,14 @@ const MENU = window.KZ_DATA.MENU;
 const seo = window.KZ_SEO;
 
 /* Default Japanese-food photos — drag & drop your own over any slot to replace. */
+/* Fotos locais otimizadas (JPG) com alt focado em SEO local. */
 const PHOTOS = {
-  hero: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=80",
-  missao: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
+  hero: { src: "assets/zen-sushi-restaurante-cotia-hero.jpg", w: 1400, h: 933, alt: "Mesa posta com pratos de alta gastronomia no ZEN SUSHI, restaurante em Cotia - SP" },
+  missao: { src: "assets/zen-sushi-ambiente-salao-cotia.jpg", w: 960, h: 640, alt: "Salão do ZEN SUSHI, restaurante de alta gastronomia em Cotia" },
   destaques: [
-    "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1000&q=80",
-    "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=1000&q=80",
-    "https://images.unsplash.com/photo-1558030006-450675393462?w=1000&q=80",
+    { src: "assets/file-mignon-ao-molho-madeira-cotia.jpg", w: 860, h: 573 },
+    { src: "assets/risoto-de-camarao-cotia.jpg", w: 900, h: 601 },
+    { src: "assets/picanha-na-brasa-cotia.jpg", w: 900, h: 506 },
   ],
 };
 
@@ -31,7 +32,7 @@ function HomePage() {
     <div>
       <section className="kz-hero">
         <div className="kz-hero-bg-wrap">
-          <image-slot class="kz-hero-slot" id="hero-foto" shape="rect" src={PHOTOS.hero} placeholder="Arraste uma foto do restaurante ou prato"></image-slot>
+          <img className="kz-hero-slot" id="hero-foto" src={PHOTOS.hero.src} width={PHOTOS.hero.w} height={PHOTOS.hero.h} alt={PHOTOS.hero.alt} title={PHOTOS.hero.alt} fetchpriority="high" decoding="async" />
         </div>
         <div className="kz-hero-overlay" aria-hidden="true" />
         <div className="kz-hero-inner">
@@ -64,7 +65,7 @@ function HomePage() {
             </div>
           </div>
           <div className="kz-mission-figure">
-            <image-slot class="kz-mission-slot" id="missao-foto" shape="rounded" radius="8" src={PHOTOS.missao} placeholder="Arraste uma foto de comida japonesa"></image-slot>
+            <img className="kz-mission-slot" id="missao-foto" src={PHOTOS.missao.src} width={PHOTOS.missao.w} height={PHOTOS.missao.h} alt={PHOTOS.missao.alt} title={PHOTOS.missao.alt} loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
@@ -92,7 +93,7 @@ function HomePage() {
         <div className="kz-featured-grid">
           {MENU.find((s) => s.id === "principais").itens.filter((i) => i.destaque).map((it, fi) => (
             <article key={it.nome} className="kz-feat-card">
-              <image-slot class="kz-feat-slot" id={"destaque-" + fi} shape="rect" src={PHOTOS.destaques[fi]} placeholder="Arraste a foto do prato"></image-slot>
+              <img className="kz-feat-slot" id={"destaque-" + fi} src={PHOTOS.destaques[fi].src} width={PHOTOS.destaques[fi].w} height={PHOTOS.destaques[fi].h} alt={it.nome + " — prato em destaque do ZEN SUSHI, restaurante em Cotia"} title={it.nome} loading="lazy" decoding="async" />
               <div className="kz-feat-body">
                 <h3 className="kz-h3">{it.nome}</h3>
                 <p className="kz-body">{it.desc}</p>
